@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="I LOVE LIFE - Transforma tu bienestar con nuestros programas de entrenamiento, nutrición y estilo de vida saludable">
+    <meta name="keywords" content="bienestar, entrenamiento, nutrición, vida saludable, coaching">
+    <meta name="author" content="I LOVE LIFE">
+    <meta name="theme-color" content="#87CEEB">
+    
+    <title>I LOVE LIFE | Servicios Personalizados</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #ffffff;
+            --secondary-color: #87CEEB;
+            --text-color: #333333;
+            --love-color: #E63946;
+            --dark-accent: #1D3557;
+            --light-gray: #F1FAEE;
+            --transition-base: 300ms ease-in-out;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.12);
+            --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 25px rgba(0,0,0,0.1);
+            --border-radius: 12px;
+            --max-width: 1200px;
+            --spacing-unit: 1rem;
+        }
+
+        /* Reset y estilos base */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 100%;
+            line-height: 1.6;
+            -webkit-text-size-adjust: 100%;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: 'Montserrat', 'Poppins', system-ui, sans-serif;
+            color: var(--text-color);
+            background-color: var(--primary-color);
+            background-image: linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.95)), 
+                              url('/assets/images/background.webp');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Tipografía */
+        h1, h2, h3, h4 {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.2;
+            font-weight: 700;
+            margin-bottom: calc(var(--spacing-unit) * 1.5);
+        }
+
+        h1 {
+            font-size: clamp(2rem, 5vw, 2.8rem);
+        }
+
+        h2 {
+            font-size: clamp(1.75rem, 4vw, 2.25rem);
+        }
+
+        h3 {
+            font-size: clamp(1.5rem, 3vw, 1.8rem);
+        }
+
+        p {
+            margin-bottom: var(--spacing-unit);
+            font-size: 1rem;
+        }
+
+        a {
+            color: var(--dark-accent);
+            text-decoration: none;
+            transition: all var(--transition-base);
+        }
+
+        a:hover, a:focus {
+            color: var(--love-color);
+            outline: none;
+        }
+
+        /* Layout */
+        .container {
+            width: 100%;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 calc(var(--spacing-unit) * 1.5);
+        }
+
+        /* Header animado */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--text-color);
+            text-align: center;
+            padding: calc(var(--spacing-unit) * 3) 0;
+            box-shadow: var(--shadow-md);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--love-color), var(--secondary-color));
+        }
+
+        header h1 {
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        header h1 .love {
+            color: var(--love-color);
+            position: relative;
+            display: inline-block;
+        }
+
+        header h1 .love::after {
+            content: '❤';
+            position: absolute;
+            right: -20px;
+            top: -10px;
+            font-size: 0.6em;
+            opacity: 0.8;
+            animation: pulse 1.5s infinite;
+        }
+
+        .header-subtitle {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            font-weight: 400;
+            opacity: 0.9;
+            letter-spacing: 0.5px;
+            animation: fadeIn 1s ease-out 0.3s both;
+        }
+
+        /* Barra de navegación mejorada */
+        .navigation {
+            background-color: var(--secondary-color);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: calc(var(--spacing-unit) * 0.5) 0;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: calc(var(--spacing-unit) * 1.5);
+            width: 100%;
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a {
+            color: var(--text-color);
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: 0.875rem;
+            letter-spacing: 1px;
+            position: relative;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 3px;
+            background-color: var(--love-color);
+            transition: width var(--transition-base);
+            border-radius: 3px;
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a:focus::after {
+            width: 60%;
+        }
+
+        .nav-links a.active {
+            background-color: var(--love-color);
+            color: white;
+            box-shadow: 0 4px 8px rgba(230, 57, 70, 0.3);
+        }
+
+        .nav-links a.active:hover {
+            transform: none;
+            background-color: #d62c3f;
+        }
+
+        /* Sección de Servicios mejorada */
+        .services-section {
+            padding: calc(var(--spacing-unit) * 4) 0;
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: calc(var(--spacing-unit) * 3);
+            position: relative;
+            color: var(--dark-accent);
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--love-color), var(--secondary-color));
+            margin: calc(var(--spacing-unit) * 0.75) auto 0;
+            border-radius: 2px;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            position: relative;
+            height: 60vh;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            overflow: hidden;
+            margin-bottom: calc(var(--spacing-unit) * 3);
+        }
+        
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(29, 53, 87, 0.6);
+            z-index: 0;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            padding: 2rem;
+        }
+        
+        .hero-title {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .hero-subtitle {
+            font-size: clamp(1rem, 2.5vw, 1.5rem);
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        /* Tarjetas de servicios mejoradas */
+        .service-card {
+            background-color: var(--primary-color);
+            border-radius: var(--border-radius);
+            padding: calc(var(--spacing-unit) * 2);
+            box-shadow: var(--shadow-md);
+            transition: all 0.4s ease;
+            border: none;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+            border-top: 5px solid var(--love-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background-color: rgba(230, 57, 70, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            color: var(--love-color);
+            font-size: 2rem;
+        }
+
+        .service-image {
+            margin-bottom: var(--spacing-unit);
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+            position: relative;
+        }
+
+        .service-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform var(--transition-base);
+        }
+
+        .service-card:hover .service-image img {
+            transform: scale(1.05);
+        }
+
+        .service-card h3 {
+            color: var(--love-color);
+            margin-bottom: var(--spacing-unit);
+            position: relative;
+            padding-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        .service-card h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 3px;
+            background-color: var(--secondary-color);
+            border-radius: 3px;
+        }
+
+        .service-card p {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        /* Botones mejorados */
+        .btn-custom {
+            background: linear-gradient(135deg, var(--love-color), #ff6b6b);
+            color: white;
+            border: none;
+            padding: 0.75rem 2rem;
+            border-radius: 50px;
+            transition: all 0.4s ease;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 15px rgba(230, 57, 70, 0.3);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .btn-custom:hover {
+            background: linear-gradient(135deg, #d62c3f, #ff5252);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 7px 20px rgba(230, 57, 70, 0.4);
+        }
+
+        .btn-custom:active {
+            transform: translateY(1px);
+        }
+        
+        .btn-outline-custom {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+            padding: 0.75rem 2rem;
+            border-radius: 50px;
+            transition: all 0.4s ease;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        
+        .btn-outline-custom:hover {
+            background: white;
+            color: var(--dark-accent);
+            transform: translateY(-3px);
+        }
+
+        /* Sección de beneficios */
+        .benefits-section {
+            background-color: var(--light-gray);
+            padding: calc(var(--spacing-unit) * 4) 0;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: calc(var(--spacing-unit) * 2);
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .benefit-icon {
+            color: var(--love-color);
+            font-size: 1.5rem;
+            min-width: 30px;
+        }
+        
+        /* Testimonios */
+        .testimonial-section {
+            padding: calc(var(--spacing-unit) * 4) 0;
+            background-color: var(--primary-color);
+        }
+        
+        .testimonial-card {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: var(--shadow-md);
+            margin: 1rem;
+            position: relative;
+        }
+        
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            font-size: 4rem;
+            color: rgba(230, 57, 70, 0.1);
+            font-family: serif;
+            line-height: 1;
+        }
+        
+        .testimonial-content {
+            position: relative;
+            z-index: 1;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .testimonial-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 1rem;
+            border: 3px solid var(--secondary-color);
+        }
+        
+        .author-info h5 {
+            margin-bottom: 0.25rem;
+            color: var(--dark-accent);
+        }
+        
+        .author-info p {
+            margin-bottom: 0;
+            font-size: 0.875rem;
+            color: #666;
+        }
+        
+        /* Video demostrativo */
+        .video-demo {
+            background-color: var(--light-gray);
+            padding: calc(var(--spacing-unit) * 4) 0;
+            text-align: center;
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 */
+            height: 0;
+            overflow: hidden;
+            max-width: 800px;
+            margin: 2rem auto;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        /* Estadísticas */
+        .stats-section {
+            background: linear-gradient(135deg, var(--dark-accent), #2a4a7a);
+            color: white;
+            padding: calc(var(--spacing-unit) * 4) 0;
+            text-align: center;
+        }
+        
+        .stat-item {
+            padding: 1.5rem;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--secondary-color);
+        }
+        
+        .stat-label {
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--love-color), #ff6b6b);
+            color: white;
+            padding: calc(var(--spacing-unit) * 5) 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('/assets/images/pattern.webp') repeat;
+            opacity: 0.1;
+            z-index: 0;
+        }
+        
+        .cta-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .cta-title {
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            margin-bottom: 1.5rem;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        /* Footer mejorado */
+        footer {
+            background: linear-gradient(135deg, var(--dark-accent), #2a4a7a);
+            color: var(--primary-color);
+            text-align: center;
+            padding: calc(var(--spacing-unit) * 3) 0;
+            margin-top: auto;
+            position: relative;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--love-color), var(--secondary-color));
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-unit);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: calc(var(--spacing-unit) * 1.5);
+            margin-top: var(--spacing-unit);
+        }
+
+        .social-links a {
+            color: var(--primary-color);
+            font-size: 1.4rem;
+            transition: all 0.3s ease;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .social-links a:hover {
+            color: var(--secondary-color);
+            transform: translateY(-5px) scale(1.1);
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        /* Animaciones */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.3); }
+            100% { transform: scale(1); }
+        }
+        
+        .hover-effect {
+            transition: all 0.3s ease;
+        }
+        
+        .hover-effect:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Responsividad */
+        @media (max-width: 768px) {
+            .nav-links {
+                flex-wrap: wrap;
+                padding: 0.5rem;
+                gap: 0.75rem;
+            }
+
+            .nav-links a {
+                padding: 0.5rem 0.75rem;
+                font-size: 0.8rem;
+            }
+            
+            .hero-section {
+                height: auto;
+                min-height: 400px;
+                padding: 4rem 1rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip to content link para accesibilidad -->
+    <a href="#main-content" class="sr-only">Saltar al contenido principal</a>
+
+    <header role="banner">
+        <div class="container">
+            <h1>I <span class="love" aria-hidden="true">LOVE</span> <span class="sr-only">love</span> LIFE</h1>
+            <p class="header-subtitle">Transforma tu vida. Alcanza tus metas.</p>
+        </div>
+    </header>
+
+    <nav class="navigation" aria-label="Navegación principal">
+        <div class="container nav-container">
+            <div class="nav-links" role="menubar">
+                <a href="index.html" role="menuitem">INICIO</a>
+                <a href="servicios.html" role="menuitem" class="active">SERVICIOS</a>
+                <a href="productos.html" role="menuitem">PRODUCTOS</a>
+                <a href="contacto.html" role="menuitem">CONTACTO</a>
+                <a href="testimonio.html" role="menuitem">TESTIMONIOS</a>
+                <a href="equipo.html" role="menuitem">PERSONALIZADO</a>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main-content" role="main">
+        <!-- Hero Section con Video -->
+        <section class="hero-section">
+            <!-- VIDEO DE FONDO - REEMPLAZAR CON TU VIDEO -->
+            <video autoplay muted loop class="hero-video">
+                <source src="https://www.youtube.com/watch?v=0T-IKFtFkjo&pp=ygUGZml0bmVz" type="video/mp4">
+                <!-- IMAGEN DE FALBACK SI EL VIDEO NO SE CARGA -->
+                <img src="/assets/images/hero-fallback.jpg" alt="Personas haciendo ejercicio y sonriendo" style="width:100%;height:100%;object-fit:cover;">
+            </video>
+            <div class="hero-overlay"></div>
+            <div class="hero-content" data-aos="fade-up">
+                <h2 class="hero-title">Transforma tu vida con nuestros servicios</h2>
+                <p class="hero-subtitle">Programas personalizados para alcanzar tus metas de salud y bienestar</p>
+                <a href="#servicios" class="btn-outline-custom hover-effect">
+                    <i class="fas fa-arrow-down"></i> Conoce más
+                </a>
+            </div>
+        </section>
+
+        <!-- Sección de Servicios -->
+        <section class="services-section" id="servicios">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">🌟 Nuestros Servicios Exclusivos</h2>
+                <p class="text-center mb-5" data-aos="fade-up" data-aos-delay="100">Programas diseñados para transformar tu bienestar integral</p>
+                
+                <div class="row g-4">
+                    <!-- Servicio 1: Entrenamiento -->
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                        <article class="service-card hover-effect" aria-labelledby="entrenamiento-title">
+                            <div class="service-icon">
+                                <i class="fas fa-dumbbell"></i>
+                            </div>
+                            <div class="service-image">
+                                <!-- IMAGEN DE ENTRENAMIENTO - REEMPLAZAR -->
+                                <img src="/assets/images/entrenamiento.webp" alt="Persona realizando ejercicios de entrenamiento" loading="lazy">
+                            </div>
+                            <h3 id="entrenamiento-title">Entrenamiento Personalizado</h3>
+                            <p>Programas diseñados específicamente para tus objetivos, ya sea pérdida de peso, ganancia muscular o mejora del rendimiento. Nuestros entrenadores certificados te guiarán en cada paso.</p>
+                            <a href="equipo.html#entrenamiento" class="btn-custom">
+                                <i class="fas fa-arrow-right"></i> Saber más
+                            </a>
+                        </article>
+                    </div>
+                    
+                    <!-- Servicio 2: Nutrición -->
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                        <article class="service-card hover-effect" aria-labelledby="nutricion-title">
+                            <div class="service-icon">
+                                <i class="fas fa-utensils"></i>
+                            </div>
+                            <div class="service-image">
+                                <!-- IMAGEN DE NUTRICIÓN - REEMPLAZAR -->
+                                <img src="/assets/images/nutricion.webp" alt="Alimentos saludables organizados" loading="lazy">
+                            </div>
+                            <h3 id="nutricion-title">Plan Nutricional Integral</h3>
+                            <p>Planes alimenticios científicos adaptados a tus necesidades metabólicas y preferencias. Incluye seguimiento semanal, recetas saludables y educación nutricional para cambios duraderos.</p>
+                            <a href="equipo.html#nutricion" class="btn-custom">
+                                <i class="fas fa-arrow-right"></i> Saber más
+                            </a>
+                        </article>
+                    </div>
+                    
+                    <!-- Servicio 3: Estilo de Vida -->
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
+                        <article class="service-card hover-effect" aria-labelledby="estilo-title">
+                            <div class="service-icon">
+                                <i class="fas fa-heartbeat"></i>
+                            </div>
+                            <div class="service-image">
+                                <!-- IMAGEN DE ESTILO DE VIDA - REEMPLAZAR -->
+                                <img src="/assets/images/estilo-vida.webp" alt="Persona meditando al atardecer" loading="lazy">
+                            </div>
+                            <h3 id="estilo-title">Coaching de Estilo de Vida</h3>
+                            <p>Transforma tus hábitos con nuestro programa holístico que incluye manejo del estrés, calidad de sueño, equilibrio emocional y desarrollo de rutinas saludables para una vida plena.</p>
+                            <a href="servicios-personalizados.html#estilo" class="btn-custom">
+                                <i class="fas fa-arrow-right"></i> Saber más
+                            </a>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Sección de Video Demostrativo -->
+        <section class="video-demo">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">Descubre cómo trabajamos</h2>
+                <p class="text-center mb-4" data-aos="fade-up" data-aos-delay="100">Mira este video para conocer nuestra metodología</p>
+                
+                <div class="video-container" data-aos="zoom-in">
+                    <!-- VIDEO DEMOSTRATIVO - REEMPLAZAR CON TU VIDEO DE YOUTUBE O VIMEO -->
+                    <iframe src="https://www.youtube.com/embed/TU_ID_DE_VIDEO" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
+                
+        <!-- Sección de Beneficios -->
+        <section class="benefits-section">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">✨ Beneficios Exclusivos</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="benefits-grid">
+                            <div class="benefit-item" data-aos="fade-up" data-aos-delay="100">
+                                <div class="benefit-icon">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <div>
+                                    <h4>Enfoque Personalizado</h4>
+                                    <p>Programas 100% adaptados a tus necesidades y objetivos específicos.</p>
+                                </div>
+                            </div>
+                            <div class="benefit-item" data-aos="fade-up" data-aos-delay="200">
+                                <div class="benefit-icon">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <div>
+                                    <h4>Seguimiento Constante</h4>
+                                    <p>Acompañamiento profesional con ajustes periódicos para optimizar resultados.</p>
+                                </div>
+                            </div>
+                            <div class="benefit-item" data-aos="fade-up" data-aos-delay="300">
+                                <div class="benefit-icon">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <div>
+                                    <h4>Tecnología de Vanguardia</h4>
+                                    <p>Uso de herramientas digitales para monitorear tu progreso en tiempo real.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="benefits-grid">
+                            <div class="benefit-item" data-aos="fade-up" data-aos-delay="400">
+                                <div class="benefit-icon">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <div>
+                                    <h4>Equipo Multidisciplinario</h4>
+                                    <p>Nutriólogos, entrenadores y coaches trabajando juntos por tus objetivos.</p>
+                                </div>
+                            </div>
+                            <div class="benefit-item" data-aos="fade-up" data-aos-delay="500">
+                                <div class="benefit-icon">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <div>
+                                    <h4>Resultados Comprobados</h4>
+                                    <p>Métodos científicos con altos índices de satisfacción entre nuestros clientes.</p>
+                                </div>
+                            </div>
+                            <div class="benefit-item" data-aos="fade-up" data-aos-delay="600">
+                                <div class="benefit-icon">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <div>
+                                    <h4>Comunidad Exclusiva</h4>
+                                    <p>Acceso a grupos privados con talleres, recetas y eventos especiales.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Sección de Estadísticas -->
+        <section class="stats-section">
+            <div class="container">
+                <h2 class="section-title text-white" data-aos="fade-up">Nuestro Impacto</h2>
+                <div class="row">
+                    <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
+                        <div class="stat-item">
+                            <div class="stat-number" data-count="95">0</div>
+                            <div class="stat-label">Clientes Satisfechos</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3" data-aos="fade-up" data-aos-delay="200">
+                        <div class="stat-item">
+                            <div class="stat-number" data-count="12">0</div>
+                            <div class="stat-label">Años de Experiencia</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3" data-aos="fade-up" data-aos-delay="300">
+                        <div class="stat-item">
+                            <div class="stat-number" data-count="50">0</div>
+                            <div class="stat-label">Especialistas</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3" data-aos="fade-up" data-aos-delay="400">
+                        <div class="stat-item">
+                            <div class="stat-number" data-count="1000">0</div>
+                            <div class="stat-label">Vidas Transformadas</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Sección de Testimonios -->
+        <section class="testimonial-section">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">❤️ Lo que dicen nuestros clientes</h2>
+                
+                <div class="row">
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="testimonial-card hover-effect">
+                            <div class="testimonial-content">
+                                "Gracias a I LOVE LIFE he recuperado mi energía y he perdido 15 kg de forma saludable. El equipo es increíblemente profesional y cercano."
+                            </div>
+                            <div class="testimonial-author">
+                                <!-- IMAGEN DE PERFIL - REEMPLAZAR -->
+                                <img src="/assets/images/testimonio1.jpg" alt="Cliente satisfecho" class="testimonial-avatar">
+                                <div class="author-info">
+                                    <h5>María González</h5>
+                                    <p>Cliente desde 2021</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="testimonial-card hover-effect">
+                            <div class="testimonial-content">
+                                "El programa de nutrición cambió completamente mi relación con la comida. Ahora tengo hábitos saludables que mantendré de por vida."
+                            </div>
+                            <div class="testimonial-author">
+                                <!-- IMAGEN DE PERFIL - REEMPLAZAR -->
+                                <img src="/assets/images/testimonio2.jpg" alt="Cliente satisfecho" class="testimonial-avatar">
+                                <div class="author-info">
+                                    <h5>Carlos Martínez</h5>
+                                    <p>Cliente desde 2022</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                        <div class="testimonial-card hover-effect">
+                            <div class="testimonial-content">
+                                "El coaching de estilo de vida me ayudó a manejar el estrés laboral y mejorar mi calidad de sueño. ¡Increíble el cambio en mi productividad y bienestar!"
+                            </div>
+                            <div class="testimonial-author">
+                                <!-- IMAGEN DE PERFIL - REEMPLAZAR -->
+                                <img src="/assets/images/testimonio3.jpg" alt="Cliente satisfecho" class="testimonial-avatar">
+                                <div class="author-info">
+                                    <h5>Ana Rodríguez</h5>
+                                    <p>Cliente desde 2020</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-4" data-aos="fade-up" data-aos-delay="400">
+                    <a href="testimonio.html" class="btn-custom">
+                        <i class="fas fa-comment"></i> Ver más testimonios
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Sección CTA -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content" data-aos="zoom-in">
+                    <h2 class="cta-title">¿Listo para transformar tu vida?</h2>
+                    <p>Únete a nuestra comunidad y comienza tu viaje hacia una vida más saludable y plena hoy mismo.</p>
+                    
+                    <div class="cta-buttons">
+                        <a href="contacto.html" class="btn-custom hover-effect">
+                            <i class="fas fa-calendar-check"></i> Agenda una consulta
+                        </a>
+                        <a href="tel:+1234567890" class="btn-outline-custom hover-effect">
+                            <i class="fas fa-phone"></i> Llámanos ahora
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <p class="mb-3">¡Únete a nuestra comunidad de vida saludable!</p>
+                <p>&copy; <span id="year"></span> I LOVE LIFE. Todos los derechos reservados.</p>
+                <p class="mb-3">Síguenos para más consejos de bienestar:</p>
+                <div class="social-links">
+                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://instagram.com/ilovefile_oficial" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- JavaScript -->
+    <script>
+        // Inicializar AOS Animation
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        
+        // Actualizar año automáticamente
+        document.getElementById('year').textContent = new Date().getFullYear();
+        
+        // Precarga de imágenes cuando sea necesario
+        if (window.matchMedia('(min-width: 768px)').matches) {
+            const images = [
+                'background.webp', 'entrenamiento.webp', 'nutricion.webp', 
+                'estilo-vida.webp', 'testimonio1.jpg', 'testimonio2.jpg', 
+                'testimonio3.jpg', 'hero-fallback.jpg', 'pattern.webp'
+            ];
+            images.forEach(img => {
+                const image = new Image();
+                image.src = `/assets/images/${img}`;
+            });
+        }
+        
+        // Animación para contadores de estadísticas
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stat-number');
+            const speed = 200;
+            
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-count');
+                const count = +counter.innerText;
+                const increment = target / speed;
+                
+                if (count < target) {
+                    counter.innerText = Math.ceil(count + increment);
+                    setTimeout(animateCounters, 1);
+                } else {
+                    counter.innerText = target;
+                }
+            });
+        }
+        
+        // Activar contadores cuando la sección es visible
+        const statsSection = document.querySelector('.stats-section');
+        
+        function checkIfInView() {
+            const sectionTop = statsSection.getBoundingClientRect().top;
+            const sectionBottom = statsSection.getBoundingClientRect().bottom;
+            
+            if (sectionTop < window.innerHeight && sectionBottom >= 0) {
+                animateCounters();
+                window.removeEventListener('scroll', checkIfInView);
+            }
+        }
+        
+        window.addEventListener('scroll', checkIfInView);
+        checkIfInView(); // Comprobar al cargar la página
+        
+        // Smooth scroll para enlaces internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Conoce al equipo de I LOVE LIFE - Profesionales dedicados a transformar tu bienestar">
+    <meta name="keywords" content="equipo, profesionales, bienestar, entrenamiento, nutrición">
+    <meta name="author" content="I LOVE LIFE">
+    <meta name="theme-color" content="#87CEEB">
+    
+    <title>Nuestro Equipo - I LOVE LIFE</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    
+    <!-- Preconexión para fuentes y recursos externos -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Precarga de recursos críticos -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap"></noscript>
+    
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    
+    <style>
+        :root {
+            --primary-color: #ffffff;
+            --secondary-color: #87CEEB;
+            --text-color: #333333;
+            --love-color: #E63946;
+            --dark-accent: #1D3557;
+            --light-gray: #F1FAEE;
+            --transition-base: 300ms ease-in-out;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.12);
+            --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 25px rgba(0,0,0,0.1);
+            --border-radius: 8px;
+            --max-width: 1200px;
+            --spacing-unit: 1rem;
+        }
+
+        /* Estilos consistentes con la página principal */
+        body {
+            font-family: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', sans-serif;
+            color: var(--text-color);
+            background-color: var(--primary-color);
+            background-image: linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.95)), 
+                              url('/assets/images/background.webp');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--text-color);
+            text-align: center;
+            padding: calc(var(--spacing-unit) * 3) 0;
+            box-shadow: var(--shadow-md);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--love-color), var(--secondary-color));
+        }
+
+        header h1 {
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        header h1 .love {
+            color: var(--love-color);
+            position: relative;
+            display: inline-block;
+        }
+
+        header h1 .love::after {
+            content: '❤';
+            position: absolute;
+            right: -20px;
+            top: -10px;
+            font-size: 0.6em;
+            opacity: 0.8;
+        }
+
+        /* Navegación */
+        .navigation {
+            background-color: var(--secondary-color);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        /* Sección del equipo */
+        .team-section {
+            padding: calc(var(--spacing-unit) * 4) 0;
+        }
+
+        .team-member-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: transform var(--transition-base), box-shadow var(--transition-base);
+            height: 100%;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .team-member-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .member-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .member-info {
+            padding: calc(var(--spacing-unit) * 1.5);
+        }
+
+        .member-name {
+            color: var(--love-color);
+            font-weight: 700;
+            margin-bottom: calc(var(--spacing-unit) * 0.5);
+        }
+
+        .member-role {
+            color: var(--dark-accent);
+            font-weight: 600;
+            margin-bottom: var(--spacing-unit);
+            font-size: 0.9rem;
+        }
+
+        .member-bio {
+            font-size: 0.9rem;
+            margin-bottom: var(--spacing-unit);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: calc(var(--spacing-unit) * 3);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background-color: var(--love-color);
+            margin: calc(var(--spacing-unit) * 0.75) auto 0;
+        }
+
+        /* Filosofía */
+        .philosophy-section {
+            background-color: var(--light-gray);
+            padding: calc(var(--spacing-unit) * 4) 0;
+        }
+
+        .philosophy-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: var(--spacing-unit);
+        }
+
+        .philosophy-icon {
+            color: var(--love-color);
+            margin-right: calc(var(--spacing-unit) * 0.75);
+            font-size: 1.2rem;
+            margin-top: 3px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-accent);
+            color: var(--primary-color);
+            text-align: center;
+            padding: calc(var(--spacing-unit) * 2) 0;
+            margin-top: auto;
+        }
+
+        .social-links a {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            transition: transform var(--transition-base), color var(--transition-base);
+            margin: 0 calc(var(--spacing-unit) * 0.5);
+        }
+
+        .social-links a:hover {
+            color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        /* Botón */
+        .btn-custom {
+            background-color: var(--love-color);
+            color: white;
+            border: none;
+            padding: 0.5rem 1.5rem;
+            border-radius: var(--border-radius);
+            transition: all var(--transition-base);
+            display: inline-block;
+        }
+
+        .btn-custom:hover {
+            background-color: var(--dark-accent);
+            color: white;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip to content link para accesibilidad -->
+    <a href="#main-content" class="sr-only">Saltar al contenido principal</a>
+
+    <header role="banner">
+        <div class="container">
+            <h1 class="display-4 mb-3">I <span class="love" aria-hidden="true">LOVE</span> <span class="sr-only">love</span> LIFE</h1>
+            <p class="lead">Conoce al equipo que transformará tu vida</p>
+        </div>
+    </header>
+
+    <nav class="navigation navbar navbar-expand-lg" aria-label="Navegación principal">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="index.html" role="menuitem">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="servicios.html" role="menuitem">Servicios</a></li>
+                    <li class="nav-item"><a class="nav-link" href="productos.html" role="menuitem">Productos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contacto.html" role="menuitem">Contacto</a></li>
+                    <li class="nav-item"><a class="nav-link" href="testimonio.html" role="menuitem">Testimonios</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="nosotros.html" role="menuitem">Nosotros</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main-content" role="main">
+        <section class="team-section">
+            <div class="container">
+                <h2 class="section-title">Nuestro Equipo de Expertos</h2>
+                <p class="text-center mb-5">Detrás de I LOVE LIFE hay un equipo multidisciplinario de profesionales apasionados por el bienestar integral. Cada miembro aporta experiencia única para guiarte en tu transformación.</p>
+                
+                <div class="row g-4">
+                    <!-- PINCO -->
+                    <div class="col-md-6 col-lg-4">
+                        <article class="team-member-card h-100" aria-labelledby="pinco-title">
+                            <img src="Fundador.jpg" alt="PINCO - Fundador" class="member-img">
+                            <div class="member-info">
+                                <h3 id="pinco-title" class="member-name">INGRIDO</h3>
+                                <p class="member-role">Fundador & CEO</p>
+                                <p class="member-bio">Con más de 15 años en la industria del bienestar, ingrid ha desarrollado metodologías innovadoras que combinan ciencia y práctica para resultados transformadores.</p>
+                                <a href="contacto.html" class="btn btn-sm btn-custom">Contactar</a>
+                            </div>
+                        </article>
+                    </div>
+                    
+                    <!-- SEPTICIÓN -->
+                    <div class="col-md-6 col-lg-4">
+                        <article class="team-member-card h-100" aria-labelledby="septicion-title">
+                            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="SEPTICIÓN - Entrenador" class="member-img">
+                            <div class="member-info">
+                                <h3 id="septicion-title" class="member-name">SEPTICIÓN</h3>
+                                <p class="member-role">Entrenador Principal</p>
+                                <p class="member-bio">Especialista en fisiología del ejercicio, diseña programas personalizados que se adaptan a todos los niveles de condición física y objetivos específicos.</p>
+                                <a href="servicios.html#entrenamiento" class="btn btn-sm btn-custom">Ver programas</a>
+                            </div>
+                        </article>
+                    </div>
+                    
+                    <!-- PRODUCTOR -->
+                    <div class="col-md-6 col-lg-4">
+                        <article class="team-member-card h-100" aria-labelledby="productor-title">
+                            <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="PRODUCTOR - Nutricionista" class="member-img">
+                            <div class="member-info">
+                                <h3 id="productor-title" class="member-name">PRODUCTOR</h3>
+                                <p class="member-role">Especialista en Nutrición</p>
+                                <p class="member-bio">Nutricionista clínico con enfoque en alimentación funcional, crea planes que no solo nutren sino que ayudan a prevenir enfermedades y optimizar la salud.</p>
+                                <a href="servicios.html#nutricion" class="btn btn-sm btn-custom">Planes nutricionales</a>
+                            </div>
+                        </article>
+                    </div>
+                    
+                    <!-- CONFLICTO -->
+                    <div class="col-md-6 col-lg-4">
+                        <article class="team-member-card h-100" aria-labelledby="conflicto-title">
+                            <img src="https://images.unsplash.com/photo-1545167622-3a6ac756afa4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="CONFLICTO - Coach" class="member-img">
+                            <div class="member-info">
+                                <h3 id="conflicto-title" class="member-name">CONFLICTO</h3>
+                                <p class="member-role">Coach de Mentalidad</p>
+                                <p class="member-bio">Experto en psicología del cambio, ayuda a superar bloqueos mentales y desarrollar la mentalidad necesaria para transformaciones duraderas.</p>
+                                <a href="servicios.html#coaching" class="btn btn-sm btn-custom">Sesiones</a>
+                            </div>
+                        </article>
+                    </div>
+                    
+                    <!-- TESTIMONIO -->
+                    <div class="col-md-6 col-lg-4">
+                        <article class="team-member-card h-100" aria-labelledby="testimonio-title">
+                            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="TESTIMONIO - Coordinador" class="member-img">
+                            <div class="member-info">
+                                <h3 id="testimonio-title" class="member-name">TESTIMONIO</h3>
+                                <p class="member-role">Coordinador de Clientes</p>
+                                <p class="member-bio">Tu enlace principal con el equipo, asegura que tu experiencia sea personalizada y que todos los aspectos de tu programa funcionen en armonía.</p>
+                                <a href="contacto.html" class="btn btn-sm btn-custom">Contactar</a>
+                            </div>
+                        </article>
+                    </div>
+                    
+                    <!-- Únete al equipo -->
+                    <div class="col-md-6 col-lg-4">
+                        <article class="team-member-card h-100 bg-light d-flex align-items-center justify-content-center text-center p-4">
+                            <div>
+                                <h3 class="member-name text-dark">¿Quieres unirte a nuestro equipo?</h3>
+                                <p class="mb-3">Buscamos profesionales apasionados por transformar vidas.</p>
+                                <a href="contacto.html#trabajo" class="btn btn-custom">Ver vacantes</a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="philosophy-section">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <h2 class="section-title">Nuestra Filosofía de Trabajo</h2>
+                        
+                        <div class="philosophy-item">
+                            <div class="philosophy-icon">✓</div>
+                            <div>
+                                <h4 class="h5">Enfoque Científico</h4>
+                                <p>Todos nuestros programas están basados en evidencia científica actualizada y metodologías comprobadas.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="philosophy-item">
+                            <div class="philosophy-icon">✓</div>
+                            <div>
+                                <h4 class="h5">Personalización</h4>
+                                <p>Reconocemos que cada persona es única, por lo que adaptamos cada plan a tus necesidades específicas.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="philosophy-item">
+                            <div class="philosophy-icon">✓</div>
+                            <div>
+                                <h4 class="h5">Soporte Continuo</h4>
+                                <p>Nuestro acompañamiento no termina con la sesión. Estamos contigo en cada paso del proceso.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="philosophy-item">
+                            <div class="philosophy-icon">✓</div>
+                            <div>
+                                <h4 class="h5">Resultados Medibles</h4>
+                                <p>Utilizamos métricas objetivas para evaluar tu progreso y ajustar estrategias cuando sea necesario.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="text-center mt-5">
+                            <a href="index.html" class="btn btn-custom btn-lg">Volver a la página principal</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer role="contentinfo" class="py-4">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8 text-center">
+                    <p class="mb-2">&copy; <span id="year"></span> I LOVE LIFE. Todos los derechos reservados.</p>
+                    <p class="mb-3">Síguenos en redes sociales:</p>
+                    <div class="social-links">
+                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/>
+                            </svg>
+                        </a>
+                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                            </svg>
+                        </a>
+                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M22.162 5.656a8.384 8.384 0 01-2.402.658A4.196 4.196 0 0021.6 4c-.82.488-1.719.83-2.656 1.015a4.182 4.182 0 00-7.126 3.814 11.874 11.874 0 01-8.62-4.37 4.168 4.168 0 00-.566 2.103c0 1.45.738 2.731 1.86 3.481a4.168 4.168 0 01-1.894-.523v.052a4.185 4.185 0 003.355 4.101 4.21 4.21 0 01-1.89.072A4.185 4.185 0 007.97 16.65a8.394 8.394 0 01-6.191 1.732 11.83 11.83 0 006.41 1.88c7.693 0 11.9-6.373 11.9-11.9 0-.18-.005-.362-.013-.54a8.496 8.496 0 002.087-2.165z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+
+    <script>
+        // Actualizar el año en el footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
